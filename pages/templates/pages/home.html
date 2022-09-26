@@ -1,0 +1,328 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block title %} StreamRo{% endblock %}
+
+{% block content %}
+
+
+<!-- Slider Start -->
+<section id="home" class="iq-main-slider p-0">
+    <div id="home-slider" class="slider m-0 p-0">
+    <div class="slide slick-bg s-bg-1">
+        <div class="container-fluid position-relative h-100">
+            <div class="slider-inner h-100">
+                <div class="row align-items-center  h-100">
+                <div class="col-xl-6 col-lg-12 col-md-12">
+                    <a href="javascript:void(0);">
+                        <div class="channel-logo" data-animation-in="fadeInLeft" data-delay-in="0.5">
+                            <img src="{% static "images/logo.png" %}" class="c-logo" alt="streamit">
+                        </div>
+                    </a>
+                    <h1 class="slider-text big-title title text-uppercase" data-animation-in="fadeInLeft"
+                        data-delay-in="0.6">John Wick: Chapter 2</h1>
+                    <div class="d-flex align-items-center" data-animation-in="fadeInUp" data-delay-in="1">
+                        <span class="badge badge-secondary p-2">18+</span>
+                        <span class="ml-3"></span>
+                    </div>
+                    <p data-animation-in="fadeInUp" data-delay-in="1.2">Forced to honor a debt from his past, John Wick assassinates a target he has no wish to kill, then faces betrayal at the hands of his sponsor.
+                    </p>
+                    <div class="d-flex align-items-center r-mb-23" data-animation-in="fadeInUp" data-delay-in="1.2">
+                        <a href="{% url 'listing' 1 %}" class="btn btn-hover"><i class="fa fa-play mr-2"
+                            aria-hidden="true"></i>Play Now</a>
+                    </div>
+                </div>
+                </div>
+                <div class="trailor-video">
+                <a href="https://www.youtube.com/watch?v=LZrX9mffH8Y" class="video-open playbtn">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" width="80px" height="80px" viewBox="0 0 213.7 213.7"
+                        enable-background="new 0 0 213.7 213.7" xml:space="preserve">
+                        <polygon class='triangle' fill="none" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="10"
+                            points="73.5,62.5 148.5,105.8 73.5,149.1 " />
+                        <circle class='circle' fill="none" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3" />
+                    </svg>
+                    <span class="w-trailor">Watch Trailer</span>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide slick-bg s-bg-2">
+        <div class="container-fluid position-relative h-100">
+            <div class="slider-inner h-100">
+                <div class="row align-items-center  h-100">
+                <div class="col-xl-6 col-lg-12 col-md-12">
+                    <a href="javascript:void(0);">
+                        <div class="channel-logo" data-animation-in="fadeInLeft">
+                            <img src="{% static "images/logo.png" %}" class="c-logo" alt="streamit">
+                        </div>
+                    </a>
+                    <h1 class="slider-text big-title title text-uppercase" data-animation-in="fadeInLeft">inglourious basterds</h1>
+                    <div class="d-flex align-items-center" data-animation-in="fadeInUp" data-delay-in="0.5">
+                        <span class="badge badge-secondary p-2">16+</span>
+                        <span class="ml-3">2h 40m</span>
+                    </div>
+                    <p data-animation-in="fadeInUp" data-delay-in="0.7">In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same.
+
+                    </p>
+                    <div class="d-flex align-items-center r-mb-23" data-animation-in="fadeInUp" data-delay-in="1">
+                        <a href="{% url 'listing' 4 %}" class="btn btn-hover"><i class="fa fa-play mr-2"
+                            aria-hidden="true"></i>Play Now</a>
+                    </div>
+                </div>
+                </div>
+                <div class="trailor-video">
+                <a href="https://www.youtube.com/watch?v=sE8hc4gVyGo" class="video-open playbtn">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" width="80px" height="80px" viewBox="0 0 213.7 213.7"
+                        enable-background="new 0 0 213.7 213.7" xml:space="preserve">
+                        <polygon class='triangle' fill="none" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="10"
+                            points="73.5,62.5 148.5,105.8 73.5,149.1 " />
+                        <circle class='circle' fill="none" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3" />
+                    </svg>
+                    <span class="w-trailor">Watch Trailer</span>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide slick-bg s-bg-3">
+        <div class="container-fluid position-relative h-100">
+            <div class="slider-inner h-100">
+                <div class="row align-items-center  h-100">
+                <div class="col-xl-6 col-lg-12 col-md-12">
+                    <a href="javascript:void(0);">
+                        <div class="channel-logo" data-animation-in="fadeInLeft">
+                            <img src="{% static "images/logo.png" %}" class="c-logo" alt="streamit">
+                        </div>
+                    </a>
+                    <h1 class="slider-text big-title title text-uppercase" data-animation-in="fadeInLeft">Inception</h1>
+                    <div class="d-flex align-items-center" data-animation-in="fadeInUp" data-delay-in="0.5">
+                        <span class="badge badge-secondary p-2">16+</span>
+                        <span class="ml-3">2h 28m</span>
+                    </div>
+                    <p data-animation-in="fadeInUp" data-delay-in="0.7">A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.</p>
+                    <div class="d-flex align-items-center r-mb-23" data-animation-in="fadeInUp" data-delay-in="1">
+                        <a href="{% url 'listing' 46 %}" class="btn btn-hover"><i class="fa fa-play mr-2"
+                            aria-hidden="true"></i>Play Now</a>
+                    </div>
+                </div>
+                </div>
+                <div class="trailor-video">
+                <a href="https://www.youtube.com/watch?v=8hP9D6kZseM" class="video-open playbtn">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" width="80px" height="80px" viewBox="0 0 213.7 213.7"
+                        enable-background="new 0 0 213.7 213.7" xml:space="preserve">
+                        <polygon class='triangle' fill="none" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="10"
+                            points="73.5,62.5 148.5,105.8 73.5,149.1 " />
+                        <circle class='circle' fill="none" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3" />
+                    </svg>
+                    <span class="w-trailor">Watch Trailer</span>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44px" height="44px" id="circle"
+        fill="none" stroke="currentColor">
+        <circle r="20" cy="22" cx="22" id="test"></circle>
+    </symbol>
+    </svg>
+</section>
+<!-- Slider End -->
+        <!-- MainContent -->
+        <div class="main-content">
+            <section id="iq-favorites">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-sm-12 overflow-hidden">
+                        <div class="iq-main-header d-flex align-items-center justify-content-between">
+                           <h4 class="main-title"><a href="{% url 'action-adventure' %}">Action & Adventure </a></h4>                      
+                        </div>
+                        <div class="favorites-contens">
+                           <ul class="favorites-slider list-inline  row p-0 mb-0">
+                            {% for movies in movie %}  
+                            <li class="slide-item">
+                                 <a href="{% url 'listing' movies.pk %}">
+                                    <div class="block-images position-relative">  
+                                       <div class="img-box">
+                                          <img src="{{movies.image.url}}" class="img-fluid" alt="">
+                                       </div>
+                                       <div class="block-description">
+                                          <h6>{{movies.title}}</h6>
+                                          <div class="movie-time d-flex align-items-center my-2">
+                                             <div class="badge badge-secondary p-1 mr-2">{{movies.age_restriction}}</div>
+                                             <span class="text-white">{{movies.duration}}m</span>
+                                          </div>
+                                          <div class="hover-buttons">
+                                             <span class="btn btn-hover">
+                                             <i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                             Play Now
+                                             </span>
+                                          </div>
+                                       </div>
+                                       <div class="block-social-info">
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              {% endfor %}
+                              
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section id="iq-upcoming-movie">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-sm-12 overflow-hidden">
+                        <div class="iq-main-header d-flex align-items-center justify-content-between">                        
+                           <h4 class="main-title"><a href="{% url 'comedies' %}">Comedies</a></h4>
+                        </div>
+                        <div class="upcoming-contens">
+                           <ul class="favorites-slider list-inline row p-0 mb-0">
+                              {% for comedy in comedy_movies %}
+                              <li class="slide-item">
+                                 <a href="{% url 'listing' comedy.pk %}">
+                                    <div class="block-images position-relative">
+                                       <div class="img-box">
+                                          <img src="{{comedy.image.url}}" class="img-fluid" alt="">
+                                       </div>
+                                       <div class="block-description">
+                                          <h6>{{comedy.title}}</h6>
+                                          <div class="movie-time d-flex align-items-center my-2">
+                                             <div class="badge badge-secondary p-1 mr-2">{{comedy.age_restriction}}</div>
+                                             <span class="text-white">{{comedy.duration}}</span>
+                                          </div>
+                                          <div class="hover-buttons">
+                                             <span class="btn btn-hover"><i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                             Play Now
+                                                   </span>
+                                                </div>
+                                             </div>
+                                             <div class="block-social-info">
+                                             </div>
+                                          </div>
+                                          </a>
+                                       </li>
+                                       {% endfor %}
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                     </section>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div>
+            </section>
+            <section id="iq-suggestede" class="s-margin">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-sm-12 overflow-hidden">
+                        <div class="iq-main-header d-flex align-items-center justify-content-between">                       
+                           <h4 class="main-title"><a href="{% url 'blockbuster' %}">Blockbuster Movies</a></h4>                       
+                        </div>
+                        <div class="suggestede-contens">
+                           <ul class="list-inline favorites-slider row p-0 mb-0">
+                              {% for buster in block_buster %}
+                              <li class="slide-item"> 
+                                 <a href="{% url 'listing' buster.pk %}">
+                                    <div class="block-images position-relative">
+                                       <div class="img-box">
+                                          <img src="{{buster.image.url}}" class="img-fluid" alt="">
+                                       </div>
+                                       <div class="block-description">
+                                          <h6>{{buster.title}}</h6>
+                                          <div class="movie-time d-flex align-items-center my-2">
+                                             <div class="badge badge-secondary p-1 mr-2">{{buster.age_restriction}}</div>
+                                             <span class="text-white">{{buster.duration}}</span>
+                                          </div>
+                                          <div class="hover-buttons">
+                                             <span class="btn btn-hover"><i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                             Play Now</span>
+                                          </div>
+                                       </div>
+                                       <div class="block-social-info">
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                             {% endfor %}
+                              
+                              
+                            
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            
+            
+            <section id="iq-tvthrillers" class="s-margin">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-sm-12 overflow-hidden">
+                        <div class="iq-main-header d-flex align-items-center justify-content-between">                        
+                           <h4 class="main-title"><a href="{% url 'drama' %}">Dramas</a></h4>                        
+                        </div>
+                        <div class="tvthrillers-contens">
+                           <ul class="favorites-slider list-inline row p-0 mb-0">
+                              {% for dramas in dramas_movies %}
+                              <li class="slide-item">
+                                 <a href="{% url 'listing' dramas.pk %}">
+                                    <div class="block-images position-relative">
+                                       <div class="img-box">
+                                          <img src="{{dramas.image.url}}" class="img-fluid" alt="">
+                                       </div>
+                                       <div class="block-description">
+                                          <h6>{{dramas.title}}</h6>
+                                          <div class="movie-time d-flex align-items-center my-2">
+                                             <div class="badge badge-secondary p-1 mr-2">{{dramas.age_restriction}}</div>
+                                             <span class="text-white">{{dramas.duration}}</span>
+                                          </div>
+                                          <div class="hover-buttons">
+                                             <span class="btn btn-hover"><i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                             Play Now</span>
+                                          </div>
+                                       </div>
+                                       <div class="block-social-info">
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              {% endfor %}
+                             
+                             
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+        
+         <!-- MainContent End-->
+
+
+<!-- back-to-top -->
+<div id="back-to-top">
+    <a class="top" href="#top" id="top"> <i class="fa fa-angle-up"></i> </a>
+</div>
+<!-- back-to-top End -->
+
+{% endblock %}

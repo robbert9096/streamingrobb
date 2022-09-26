@@ -1,0 +1,146 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block title %}Top IMDb {% endblock %}
+{% block content %}
+
+<!-- Slider Start -->
+<section class="iq-main-slider p-0">
+    <div id="tvshows-slider">
+       {% for slider in slider_movie %} 
+       {% if slider %}
+       <div>
+          <a href="{% url 'listing' slider.pk %}">  
+             <div class="shows-img">
+                <img src="{{slider.main_image.url}}" class="w-100" alt="">
+                <div class="shows-content">
+                    <h1 class="trending-text big-title text-uppercase">{{slider.title}}</h1>
+                   <div class="d-flex align-items-center series mb-4"> 
+                    <a href="javascript:void(0);"><img src="{% static 'images/trending/trending-label.png' %}"
+                       class="img-fluid" alt=""></a>
+                    <span class="text-gold ml-3" style="font-weight: bold">{{slider.imdb}}</span>
+                 </div>
+                 <div class="p-btns">
+                    <div class="d-flex align-items-center p-0">
+                       <a href="{% url 'listing' slider.pk %}" class="btn btn-hover mr-2" tabindex="0"><i
+                          class="fa fa-play mr-2" aria-hidden="true"></i>Play Now</a>
+                    </div>
+                 </div>
+                 <br>
+                 <div class="text-primary title">Duration: <span class="text-body">{{slider.duration}}</span>
+                 </div>
+                </div>
+             </div> 
+          </a>
+       </div>
+       {% endif %}
+       {% endfor %}
+    </div>
+    </div>
+ </section>
+ <!-- Slider End -->
+ <!-- MainContent -->
+ <div class="main-content">
+    <section id="iq-favorites">
+       <div class="container-fluid">
+          <div class="row">
+             <div class="col-sm-12 overflow-hidden">
+                <div class="iq-main-header d-flex align-items-center justify-content-between">
+                   <h2 class="main-title">Find the perfect movie</h2>
+                </div>
+                <div class="favorites-contens">
+                    <p>All the top IMDB movies available to stream online. See where you can watch all of the top IMDB movies.
+                    <br> If you're wondering what to watch, below you will find all the different Top IMDB movies you can watch.</p>
+                   <ul class="favorites-slider list-inline  row p-0 mb-0">
+                    
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section id="iq-upcoming-movie">
+       <div class="container-fluid">
+          <div class="row">
+             <div class="col-sm-12 overflow-hidden">
+                <div class="iq-main-header d-flex align-items-center justify-content-between">
+                   <h4 class="main-title">Popular Movies</h4>
+                </div>
+                <div class="upcoming-contens">
+                   <ul class="favorites-slider list-inline row p-0 mb-0">
+                     {% for movies in popular_movies %} 
+                     <li class="slide-item">
+                         <a href="{% url 'listing' movies.pk %}">
+                            <div class="block-images position-relative">
+                               <div class="img-box">
+                                  <img src="{{movies.image.url}}" class="img-fluid" alt="">
+                               </div>
+                               <div class="block-description">
+                                  <h6>{{movies.title}}</h6>
+                                  <div class="movie-time d-flex align-items-center my-2">
+                                     <div class="badge badge-secondary p-1 mr-2">{{movies.age_restriction}}</div>
+                                     <span class="text-white">{{movies.duration}}</span>
+                                  </div>
+                                  <div class="hover-buttons">
+                                     <span class="btn btn-hover"><i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                        Play
+                                        Now</span>
+                                  </div>
+                               </div>
+                               <div class="block-social-info">
+                               </div>
+                            </div>
+                         </a>
+                      </li>
+                      {% endfor %}
+
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section id="iq-suggestede">
+       <div class="container-fluid">
+          <div class="row">
+             <div class="col-sm-12 overflow-hidden">
+                <div class="iq-main-header d-flex align-items-center justify-content-between">
+                   <h4 class="main-title">New Movies</h4>
+                </div>
+                <div class="suggestede-contens">
+                   <ul class="list-inline favorites-slider row p-0 mb-0">
+                     {% for movies in new_movies %} 
+                     <li class="slide-item">
+                         <a href="{% url 'listing' movies.pk %}">
+                            <div class="block-images position-relative">
+                               <div class="img-box">
+                                  <img src="{{movies.image.url}}" class="img-fluid" alt="">
+                               </div>
+                               <div class="block-description">
+                                  <h6>{{movies.title}}</h6>
+                                  <div class="movie-time d-flex align-items-center my-2">
+                                     <div class="badge badge-secondary p-1 mr-2">{{movies.age_restriction}}</div>
+                                     <span class="text-white">{{movies.duration}}</span>
+                                  </div>
+                                  <div class="hover-buttons">
+                                     <span class="btn btn-hover"><i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                        Play
+                                        Now</span>
+                                  </div>
+                               </div>
+                               <div class="block-social-info">
+                               </div>
+                            </div>
+                         </a>
+                      </li>
+                     {% endfor %}
+                      
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+ </div>
+ 
+ <!-- MainContent End-->
+{% endblock %}

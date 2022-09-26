@@ -1,0 +1,100 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+  <!-- MainContent -->
+  <section class="m-profile manage-p">
+    <div class="container h-100">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-lg-10">
+                <div class="sign-user_card">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="upload_profile d-inline-block">
+                            <img src="{% static 'images/user/user.jpg' %}" class="profile-pic rounded-circle img-fluid" alt="user">
+                                <input class="file-upload" type="file" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 device-margin">
+                            <div class="profile-from">
+                                <h4 class="mb-3">Manage Profile</h4>
+                                    
+                                <form method="POST" action="">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label>Update First Name:</label>
+                                        {{u_update.first_name}}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Update Last Name:</label>
+                                        {{u_update.last_name}}
+                                    </div>
+                                    
+                                    </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <button type="submit" class="btn btn-hover">Save</button>
+                                        
+                                        <a href="{% url 'home' %}" class="btn btn-link">Cancel</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="mb-0">
+    <div class="container-fluid">
+        <div class="block-space">
+            <div class="row">
+                <div class="col-lg-3 col-md-4">
+                    <ul class="f-link list-unstyled mb-0">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="movie-category.html">Movies</a></li>
+                        <li><a href="show-category.html">Tv Shows</a></li>
+                        <li><a href="#">Coporate Information</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <ul class="f-link list-unstyled mb-0">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <ul class="f-link list-unstyled mb-0">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Cotact Us</a></li>
+                        <li><a href="#">Legal Notice</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-12 r-mt-15">
+                    <div class="d-flex">
+                        <a href="#" class="s-icon">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="s-icon">
+                            <i class="ri-skype-fill"></i>
+                        </a>
+                        <a href="#" class="s-icon">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="s-icon">
+                            <i class="ri-whatsapp-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright py-2">
+        <div class="container-fluid">
+            <p class="mb-0 text-center font-size-14 text-body">STREAMIT - 2020 All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+<!-- MainContent End-->
+{% endblock%}

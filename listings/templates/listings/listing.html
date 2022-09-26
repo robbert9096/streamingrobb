@@ -1,0 +1,114 @@
+{% extends 'pages/base.html' %}
+{% load embed_video_tags %}
+{% load static %}
+{% block title %} {{movie.title}} {% endblock %}
+{% block content %}
+<!-- Banner Start -->
+<div class="video-container iq-main-slider">
+   <br>
+   <br>
+   <br>
+   <div class="container my-4">
+
+      <div class="embed-responsive embed-responsive-21by9">
+        <iframe class="embed-responsive-item" src="{{movie.video}}" allowfullscreen ></iframe>
+      </div>
+  </div>
+ </div>
+ <!-- Banner End -->
+ <!-- MainContent -->
+ <div class="main-content movi">
+    <section class="movie-detail container-fluid">
+       <div class="row">
+          <div class="col-lg-12">
+             <div class="trending-info g-border">
+                <h1 class="trending-text big-title text-uppercase mt-0">{{movie.title}}</h1>
+                <ul class="p-0 list-inline d-flex align-items-center movie-content">
+                   <li class="text-white">{{movie.category}}</li>
+                </ul>
+                <div class="d-flex align-items-center text-white text-detail">
+                   <span class="badge badge-secondary p-3">{{movie.age_restriction}}</span>
+                   <span class="ml-3">{{movie.duration}}</span>
+                   <span class="trending-year">{{movie.year_movie}}</span>
+                </div>
+                <div class="d-flex align-items-center series mb-4">
+                   <a href="javascript:void();"><img src="{% static 'images/trending/trending-label.png' %}" class="img-fluid" 
+                         alt=""><span class="text-gold ml-3">IMDB: {{movie.imdb}}</span></a>
+                </div>
+                <p class="trending-dec w-100 mb-0">{{movie.description}}</p>
+                <ul class="list-inline p-0 mt-4 share-icons music-play-lists">
+                  <a href="{% url 'my_list' movie.id %}" tabindex="-1" role="button" aria-disabled=""><li><span><i class="ri-add-line"></i></span></li></a>
+                   
+                   <li class="share">
+                      <span><i class="ri-share-fill"></i></span>
+                      <div class="share-box">
+                         <div class="d-flex align-items-center">
+                            <a href="www.facebook.com" class="share-ico"><i class="ri-facebook-fill"></i></a>
+                            <a href="#" class="share-ico"><i class="ri-twitter-fill"></i></a>
+                            <a href="#" class="share-ico"><i class="ri-links-fill"></i></a>
+                         </div>
+                      </div>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section id="iq-favorites" class="s-margin">
+       <div class="container-fluid">
+          <div class="row">
+             <div class="col-sm-12 overflow-hidden">
+                <div class="iq-main-header d-flex align-items-center justify-content-between">                     
+                   <h4 class="main-title"><a href="movie-category.html">More Like This</a></h4>                     
+                </div>
+                <div class="favorites-contens">
+                   <ul class="list-inline favorites-slider row p-0 mb-0">
+                     {% for movie in more_like_this %} 
+                     <li class="slide-item">
+                         <a href="{% url 'listing' movie.pk %}">
+                            <div class="block-images position-relative">
+                               <div class="img-box">
+                                  <img src="{{movie.image.url}}" class="img-fluid" alt="">
+                               </div>
+                               <div class="block-description">
+                                  <h6>{{movie.title}}</h6>
+                                  <div class="movie-time d-flex align-items-center my-2">
+                                     <div class="badge badge-secondary p-1 mr-2">{{movie.age_restriction}}</div>
+                                     <span class="text-white">{{movie.duration}}</span>
+                                  </div>
+                                  <div class="hover-buttons">
+                                     <span class="btn btn-hover"><i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                        Play
+                                        Now</span>
+                                  </div>
+                               </div>
+                               <div class="block-social-info">
+                                  <ul class="list-inline p-0 m-0 music-play-lists">
+                             
+                                  </ul>
+                               </div>
+                            </div>
+                         </a>
+                      </li>
+                      {% endfor %}
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section id="iq-upcoming-movie">
+       <div class="container-fluid">
+          <div class="row">
+             <div class="col-sm-12 overflow-hidden">
+                <div class="iq-main-header d-flex align-items-center justify-content-between">                     
+                  
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+ </div>
+ <!-- MainContent End-->
+{% endblock %}
