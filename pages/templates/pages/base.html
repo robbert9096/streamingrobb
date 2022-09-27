@@ -17,11 +17,11 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <!-- Responsive -->
 <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
-<!--NavBar-->
-{% include 'pages/parts/_navbar.html '%}
+
 </head>
 
 <body>
+{% include 'pages/parts/_navbar.html '%}
 {% block content %} {% endblock %}
 {% include 'pages/parts/_footer.html'%}
 
