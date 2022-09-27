@@ -127,8 +127,10 @@ USE_TZ = True
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
-
-
+SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
+TEMPLATE_DIRS = (
+    os.path.join(SETTINGS_PATH, 'template'),
+)
 STATIC_URL = 'static/'
 STATICFILES_DIR = [
     BASE_DIR / 'static'
