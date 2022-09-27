@@ -12,23 +12,21 @@
                       <div class="navbar-toggler-icon" data-toggle="collapse">
                          <span class="navbar-menu-icon navbar-menu-icon--top"></span>
                          <span class="navbar-menu-icon navbar-menu-icon--middle"></span>
-                         <span class="navbar-menu-icon navbar-menu-icon--bottom"></span>
+                         <span class="navbar-menu-icon navbar-menu-icon--bottom"></span> 
                       </div>
                    </a>
-                   <a class="navbar-brand" href="index.html"> <img class="img-fluid logo" src="images/logo.png"
+                   <a class="navbar-brand" href="{% url 'home' %}"> <img class="img-fluid logo" src="{% static 'images/logo.png' %}"
                       alt="streamit" /> </a>
                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <div class="menu-main-menu-container">
                          <ul id="top-menu" class="navbar-nav ml-auto">
                             <li class="menu-item">
-                               <a href="index.html">Home</a>
+                               <a href="{% url 'top10' %}">Top IMDb</a>
                             </li>
                             <li class="menu-item">
-                               <a href="show-category.html">Tv Shows</a>
+                               <a href="{% url 'my-list' %}">My List</a>
                             </li>
-                            <li class="menu-item">
-                               <a href="movie-category.html">Movies</a>
-                            </li>
+                           
                          </ul>
                       </div>
                    </div>
@@ -41,13 +39,13 @@
                          <div class="navbar-right position-relative">
                             <ul class="d-flex align-items-center justify-content-end list-inline m-0">
                                <li>
-                                  <a href="#" class="search-toggle">
+                                  <a href="{% url 'search' %}" class="search-toggle">
                                   <i class="ri-search-line"></i>
                                   </a>
                                   <div class="search-box iq-search-bar">
-                                     <form action="#" class="searchbox">
+                                     <form action="{% url 'search' %}" class="searchbox">
                                         <div class="form-group position-relative">
-                                           <input type="text" class="text search-input font-size-12"
+                                           <input type="text" class="text search-input font-size-12" name="keywords"
                                               placeholder="type here to search...">
                                            <i class="search-link ri-search-line"></i>
                                         </div>
@@ -67,49 +65,32 @@
                                   <div class="iq-sub-dropdown">
                                      <div class="iq-card shadow-none m-0">
                                         <div class="iq-card-body">
-                                           <a href="#" class="iq-sub-card">
+                                            {% for promo in last_movies %}
+                                           <a href="{% url 'listing' promo.pk %}" class="iq-sub-card">
                                               <div class="media align-items-center">
-                                                 <img src="images/notify/thumb-1.jpg" class="img-fluid mr-3"
-                                                    alt="streamit" />
+                                                 <img src="{{promo.image.url}}" class="img-fluid mr-3"
+                                                    alt="streamit" width="64" height="64" />
                                                  <div class="media-body">
-                                                    <h6 class="mb-0 ">Boop Bitty</h6>
-                                                    <small class="font-size-12"> just now</small>
+                                                    <h6 class="mb-0 ">{{promo.title}}</h6>
+                                                    <small class="font-size-12">{{promo.date_published}}</small>
                                                  </div>
                                               </div>
                                            </a>
-                                           <a href="#" class="iq-sub-card">
-                                              <div class="media align-items-center">
-                                                 <img src="images/notify/thumb-2.jpg" class="img-fluid mr-3"
-                                                    alt="streamit" />
-                                                 <div class="media-body">
-                                                    <h6 class="mb-0 ">The Last Breath</h6>
-                                                    <small class="font-size-12">15 minutes ago</small>
-                                                 </div>
-                                              </div>
-                                           </a>
-                                           <a href="#" class="iq-sub-card">
-                                              <div class="media align-items-center">
-                                                 <img src="images/notify/thumb-3.jpg" class="img-fluid mr-3"
-                                                    alt="streamit" />
-                                                 <div class="media-body">
-                                                    <h6 class="mb-0 ">The Hero Camp</h6>
-                                                    <small class="font-size-12">1 hour ago</small>
-                                                 </div>
-                                              </div>
-                                           </a>
+                                           {% endfor %}
+                                           
                                         </div>
                                      </div>
                                   </div>
                                </li>
                                <li>
                                   <a href="#" class="iq-user-dropdown search-toggle d-flex align-items-center">
-                                  <img src="images/user/user.jpg" class="img-fluid avatar-40 rounded-circle"
+                                  <img src="{% static 'images/user/user.jpg' %}" class="img-fluid avatar-40 rounded-circle"
                                      alt="user">
                                   </a>
                                   <div class="iq-sub-dropdown iq-user-dropdown">
                                      <div class="iq-card shadow-none m-0">
                                         <div class="iq-card-body p-0 pl-3 pr-3">
-                                           <a href="manage-profile.html" class="iq-sub-card setting-dropdown">
+                                           <a href="{% url 'dashbord' %}" class="iq-sub-card setting-dropdown">
                                               <div class="media align-items-center">
                                                  <div class="right-icon">
                                                     <i class="ri-file-user-line text-primary"></i>
@@ -119,27 +100,8 @@
                                                  </div>
                                               </div>
                                            </a>
-                                           <a href="setting.html" class="iq-sub-card setting-dropdown">
-                                              <div class="media align-items-center">
-                                                 <div class="right-icon">
-                                                    <i class="ri-settings-4-line text-primary"></i>
-                                                 </div>
-                                                 <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">Settings</h6>
-                                                 </div>
-                                              </div>
-                                           </a>
-                                           <a href="pricing-plan.html" class="iq-sub-card setting-dropdown">
-                                              <div class="media align-items-center">
-                                                 <div class="right-icon">
-                                                    <i class="ri-settings-4-line text-primary"></i>
-                                                 </div>
-                                                 <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">Pricing Plan</h6>
-                                                 </div>
-                                              </div>
-                                           </a>
-                                           <a href="login.html" class="iq-sub-card setting-dropdown">
+                                           {% if user.is_authenticated %}
+                                           <a href="{% url 'register' %}" class="iq-sub-card setting-dropdown">
                                               <div class="media align-items-center">
                                                  <div class="right-icon">
                                                     <i class="ri-logout-circle-line text-primary"></i>
@@ -149,6 +111,18 @@
                                                  </div>
                                               </div>
                                            </a>
+                                           {% else %}
+                                           <a href="{% url 'login' %}" class="iq-sub-card setting-dropdown">
+                                            <div class="media align-items-center">
+                                               <div class="right-icon">
+                                                  <i class="ri-logout-circle-line text-primary"></i>
+                                               </div>
+                                               <div class="media-body ml-3">
+                                                  <h6 class="mb-0">Login</h6>
+                                               </div>
+                                            </div>
+                                         </a>
+                                           {% endif %}
                                         </div>
                                      </div>
                                   </div>
@@ -160,13 +134,13 @@
                    <div class="navbar-right menu-right">
                       <ul class="d-flex align-items-center list-inline m-0">
                          <li class="nav-item nav-icon">
-                            <a href="#" class="search-toggle device-search">
+                            <a href="{% url 'search' %}" class="search-toggle device-search">
                             <i class="ri-search-line"></i>
                             </a>
                             <div class="search-box iq-search-bar d-search">
-                               <form action="#" class="searchbox">
+                               <form action="{% url 'search' %}" class="searchbox">
                                   <div class="form-group position-relative">
-                                     <input type="text" class="text search-input font-size-12"
+                                     <input type="text" class="text search-input font-size-12" name="keywords"
                                         placeholder="type here to search...">
                                      <i class="search-link ri-search-line"></i>
                                   </div>
@@ -186,36 +160,18 @@
                             <div class="iq-sub-dropdown">
                                <div class="iq-card shadow-none m-0">
                                   <div class="iq-card-body">
-                                     <a href="#" class="iq-sub-card">
+                                    {% for promo in last_movies %}
+                                     <a href="{% url 'listing' promo.pk %}" class="iq-sub-card">
                                         <div class="media align-items-center">
-                                           <img src="images/notify/thumb-1.jpg" class="img-fluid mr-3"
-                                              alt="streamit" />
+                                           <img src="{{promo.image.url}}" class="img-fluid mr-3"
+                                              alt="streamit" width="64" height="64" />
                                            <div class="media-body">
-                                              <h6 class="mb-0 ">Boot Bitty</h6>
-                                              <small class="font-size-12"> just now</small>
+                                              <h6 class="mb-0 ">{{promo.title}}</h6>
+                                              <small class="font-size-12"> {{promo.date_published}}</small>
                                            </div>
                                         </div>
                                      </a>
-                                     <a href="#" class="iq-sub-card">
-                                        <div class="media align-items-center">
-                                           <img src="images/notify/thumb-2.jpg" class="img-fluid mr-3"
-                                              alt="streamit" />
-                                           <div class="media-body">
-                                              <h6 class="mb-0 ">The Last Breath</h6>
-                                              <small class="font-size-12">15 minutes ago</small>
-                                           </div>
-                                        </div>
-                                     </a>
-                                     <a href="#" class="iq-sub-card">
-                                        <div class="media align-items-center">
-                                           <img src="images/notify/thumb-3.jpg" class="img-fluid mr-3"
-                                              alt="streamit" />
-                                           <div class="media-body">
-                                              <h6 class="mb-0 ">The Hero Camp</h6>
-                                              <small class="font-size-12">1 hour ago</small>
-                                           </div>
-                                        </div>
-                                     </a>
+                                     {% endfor %}
                                   </div>
                                </div>
                             </div>
@@ -223,12 +179,12 @@
                          <li class="nav-item nav-icon">
                             <a href="#" class="iq-user-dropdown search-toggle p-0 d-flex align-items-center"
                                data-toggle="search-toggle">
-                            <img src="images/user/user.jpg" class="img-fluid avatar-40 rounded-circle" alt="user">
+                            <img src="{% static 'images/user/user.jpg' %}" class="img-fluid avatar-40 rounded-circle" alt="user">
                             </a>
                             <div class="iq-sub-dropdown iq-user-dropdown">
                                <div class="iq-card shadow-none m-0">
                                   <div class="iq-card-body p-0 pl-3 pr-3">
-                                     <a href="manage-profile.html" class="iq-sub-card setting-dropdown">
+                                     <a href="{% url 'dashbord' %}" class="iq-sub-card setting-dropdown">
                                         <div class="media align-items-center">
                                            <div class="right-icon">
                                               <i class="ri-file-user-line text-primary"></i>
@@ -238,27 +194,8 @@
                                            </div>
                                         </div>
                                      </a>
-                                     <a href="setting.html" class="iq-sub-card setting-dropdown">
-                                        <div class="media align-items-center">
-                                           <div class="right-icon">
-                                              <i class="ri-settings-4-line text-primary"></i>
-                                           </div>
-                                           <div class="media-body ml-3">
-                                              <h6 class="mb-0 ">Settings</h6>
-                                           </div>
-                                        </div>
-                                     </a>
-                                     <a href="pricing-plan.html" class="iq-sub-card setting-dropdown">
-                                        <div class="media align-items-center">
-                                           <div class="right-icon">
-                                              <i class="ri-settings-4-line text-primary"></i>
-                                           </div>
-                                           <div class="media-body ml-3">
-                                              <h6 class="mb-0 ">Pricing Plan</h6>
-                                           </div>
-                                        </div>
-                                     </a>
-                                     <a href="login.html" class="iq-sub-card setting-dropdown">
+                                     {% if user.is_authenticated %}
+                                     <a href="{% url 'logout' %}" class="iq-sub-card setting-dropdown">
                                         <div class="media align-items-center">
                                            <div class="right-icon">
                                               <i class="ri-logout-circle-line text-primary"></i>
@@ -268,6 +205,18 @@
                                            </div>
                                         </div>
                                      </a>
+                                     {% else %}
+                                     <a href="{% url 'login' %}" class="iq-sub-card setting-dropdown">
+                                        <div class="media align-items-center">
+                                           <div class="right-icon">
+                                              <i class="ri-logout-circle-line text-primary"></i>
+                                           </div>
+                                           <div class="media-body ml-3">
+                                              <h6 class="mb-0 ">Login</h6>
+                                           </div>
+                                        </div>
+                                     </a>
+                                     {% endif %}
                                   </div>
                                </div>
                             </div>
