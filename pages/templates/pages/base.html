@@ -21,7 +21,9 @@
 </head>
 
 <body>
+{% if user.is_authenticated %}
 {% include 'pages/parts/navbar.html' %}
+{% endif %}
 {% block content %} {% endblock %}
 {% include 'pages/parts/_footer.html'%}
 
